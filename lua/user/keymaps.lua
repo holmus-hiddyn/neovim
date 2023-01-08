@@ -33,7 +33,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
@@ -53,7 +53,7 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "-", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
@@ -81,3 +81,20 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+keymap("n", "<leader>evp", ":e $HOME/.config/nvim/lua/user/plugins.lua<cr>", opts)
+keymap("n", "<leader>evr", ":e $HOME/.config/nvim/lua/user/options.lua<cr>", opts)
+keymap("n", "<leader>evm", ":e $HOME/.config/nvim/lua/user/keymaps.lua<cr>", opts)
+
+keymap("n", "<C-s>", ":w<cr>", opts)
+
+keymap("n", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true })
+keymap("n", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true })
+keymap("v", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true })
+keymap("v", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true })
+keymap("n", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true })
+keymap("n", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true })
+keymap("v", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true })
+keymap("v", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true })
+
+keymap("n", "<leader>b", ":enew<cr>", opts)
